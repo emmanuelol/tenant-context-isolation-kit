@@ -16,6 +16,8 @@ dependencies = [
     "urllib3>=1.26.0",
     "typing-extensions>=4.5.0",
     "redis>=5.0.0",
+    "google-api-python-client>=2.0.0",
+    "httplib2>=0.20.0",
 ]
 
 [project.optional-dependencies]
@@ -32,6 +34,13 @@ otel = [
 structlog = [
     "structlog>=23.0.0",
 ]
+integrations = [
+    "fastapi>=0.100.0",
+    "starlette>=0.27.0",
+    "sqlalchemy>=2.0.0",
+    "opentelemetry-api>=1.20.0",
+    "structlog>=23.0.0",
+]
 all = [
     "fastapi>=0.100.0",
     "starlette>=0.27.0",
@@ -44,6 +53,7 @@ dev = [
     "pytest-asyncio>=0.23.0",
     "pytest-mock>=3.12.0",
     "fakeredis>=2.20.0",
+    "httpx>=0.25.0",
 ]
 
 [tool.hatch.version]
@@ -56,3 +66,12 @@ packages = ["src/tenant_context_isolation_kit"]
 asyncio_mode = "auto"
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
