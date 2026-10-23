@@ -3,7 +3,7 @@ tenant-context-isolation-kit: SRE-hardened multi-tenant execution context, stric
 dependency injection, and resilient client pooling.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 from tenant_context_isolation_kit.context import (
     TenantContext,
@@ -19,6 +19,26 @@ from tenant_context_isolation_kit.clients import (
     SafeWorksheet,
     IsolatedClientRegistry,
 )
+from tenant_context_isolation_kit.exceptions import (
+    TenantIsolationError,
+    MissingTenantContextError,
+    CrossTenantAccessError,
+    TenantQuotaExceededError,
+    TenantConfigurationError,
+)
+from tenant_context_isolation_kit.middleware import (
+    TenantContextMiddleware,
+)
+from tenant_context_isolation_kit.database import (
+    sanitize_tenant_id_for_sql,
+    build_set_tenant_sql,
+    attach_tenant_rls_listener,
+)
+from tenant_context_isolation_kit.telemetry import (
+    TenantLogFilter,
+    structlog_tenant_processor,
+    inject_tenant_span_attributes,
+)
 
 __all__ = [
     "__version__",
@@ -30,9 +50,21 @@ __all__ = [
     "SafeSpreadsheet",
     "SafeWorksheet",
     "IsolatedClientRegistry",
+    "TenantIsolationError",
+    "MissingTenantContextError",
+    "CrossTenantAccessError",
+    "TenantQuotaExceededError",
+    "TenantConfigurationError",
+    "TenantContextMiddleware",
+    "sanitize_tenant_id_for_sql",
+    "build_set_tenant_sql",
+    "attach_tenant_rls_listener",
+    "TenantLogFilter",
+    "structlog_tenant_processor",
+    "inject_tenant_span_attributes",
 ]
 
-# Optional forward export for routing module (populated in T-02)
+# Optional forward export for routing module
 try:
     from tenant_context_isolation_kit.routing import (
         TenantRoutingResolver,
