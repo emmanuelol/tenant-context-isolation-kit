@@ -28,13 +28,9 @@ plugins:
   - search
 
 nav:
-  - Overview: README.md
-  - Security Policy: SECURITY.md
-  - Contributing: CONTRIBUTING.md
-  - Changelog: CHANGELOG.md
+  - Overview: index.md
+  - API Reference: api.md
   - Architecture Decision Records:
-      - "ADR 001: ContextVars vs ThreadLocal": docs/adr/001-contextvars-vs-threadlocal.md
-      - "ADR 002: Fail-Closed Routing": docs/adr/002-fail-closed-routing-strategy.md
-      - "ADR 003: PostgreSQL RLS Scoping": docs/adr/003-postgresql-rls-connection-scoping.md
-  - Reference Architecture:
-      - "FastAPI + Postgres RLS Demo": examples/fastapi-postgres-rls/README.md
+      - "ADR 001: ContextVars vs ThreadLocal": adr/001-contextvars-vs-threadlocal.md
+      - "ADR 002: Fail-Closed Routing": adr/002-fail-closed-routing-strategy.md
+      - "ADR 003: PostgreSQL RLS Scoping": adr/003-postgresql-rls-connection-scoping.md
