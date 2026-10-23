@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: multitenant_postgres_demo
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: multitenant_demo
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d multitenant_demo"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    container_name: multitenant_api_demo
+    environment:
+      DATABASE_URL: postgresql://postgres:postgrespassword@db:5432/multitenant_demo
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: ["uvicorn", "examples.fastapi-postgres-rls.app:app", "--host", "0.0.0.0", "--port", "8000"]
