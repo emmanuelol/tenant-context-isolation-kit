@@ -1,8 +1,8 @@
 site_name: Tenant Context Isolation Kit
 site_description: SRE-hardened multi-tenant execution context, strict dependency injection, and resilient client pooling.
-site_url: https://github.com/public-staging/tenant-context-isolation-kit
-repo_url: https://github.com/public-staging/tenant-context-isolation-kit
-repo_name: tenant-context-isolation-kit
+site_url: https://github.com/emmanuelol/tenant-context-isolation-kit
+repo_url: https://github.com/emmanuelol/tenant-context-isolation-kit
+repo_name: emmanuelol/tenant-context-isolation-kit
 
 theme:
   name: material
