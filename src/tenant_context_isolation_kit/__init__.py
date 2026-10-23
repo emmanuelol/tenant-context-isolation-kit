@@ -3,7 +3,7 @@ tenant-context-isolation-kit: SRE-hardened multi-tenant execution context, stric
 dependency injection, and resilient client pooling.
 """
 
-__version__ = "0.2.1"
+__version__ = "0.2.2"
 
 # Core context and client primitives (always available)
 from tenant_context_isolation_kit.context import (
