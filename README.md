@@ -1,7 +1,7 @@
 # 🛡️ tenant-context-isolation-kit
 
-[![CI Matrix](https://github.com/public-staging/tenant-context-isolation-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/public-staging/tenant-context-isolation-kit/actions)
-[![Security Scan](https://github.com/public-staging/tenant-context-isolation-kit/actions/workflows/security.yml/badge.svg)](https://github.com/public-staging/tenant-context-isolation-kit/actions)
+[![CI](https://github.com/emmanuelol/tenant-context-isolation-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/emmanuelol/tenant-context-isolation-kit/actions/workflows/ci.yml)
+[![Security](https://github.com/emmanuelol/tenant-context-isolation-kit/actions/workflows/security.yml/badge.svg)](https://github.com/emmanuelol/tenant-context-isolation-kit/actions/workflows/security.yml)
 [![PEP 561 Typed](https://img.shields.io/badge/typing-PEP%20561-blue)](https://peps.python.org/pep-0561/)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
