@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY pyproject.toml ./
 COPY src/ ./src/
 
-RUN pip install --no-cache-dir --prefix=/install ".[dev]"
+RUN pip install --no-cache-dir --prefix=/install ".[all,dev]"
 
 FROM python:3.11-slim AS runtime
 WORKDIR /app
