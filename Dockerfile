@@ -1,3 +1,13 @@
+# ==============================================================================
+# CI / SECURITY AUDIT SANDBOX DOCKERFILE
+# ==============================================================================
+# NOTE: This Dockerfile is strictly a minimal, hardened test harness used by
+# CI security scanning (scripts/audit_image.sh) and clean-room container verification.
+# It is NOT an application service container.
+# For the runnable multi-tenant application demo stack, see:
+# examples/fastapi-postgres-rls/Dockerfile & docker-compose.yml
+# ==============================================================================
+
 # Multi-stage Dockerfile for tenant-context-isolation-kit
 FROM python:3.11-slim AS builder
 WORKDIR /build

@@ -125,6 +125,11 @@ cd examples/fastapi-postgres-rls
 docker compose up -d
 ```
 
+### 🐳 Container Architecture: Library vs. Demo Stack
+
+* **Root `Dockerfile` & `docker-compose.yml`:** Minimal, hardened CI test sandbox used exclusively for containerized security scans (`make audit` via Trivy) and clean-room testing. This is not an application service.
+* **`examples/fastapi-postgres-rls/`:** Dedicated, standalone multi-tenant application demo with its own `Dockerfile`, `docker-compose.yml`, and PostgreSQL RLS policies.
+
 ---
 
 ## 🏛️ Architecture Decision Records (ADRs)

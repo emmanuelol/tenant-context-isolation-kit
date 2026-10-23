@@ -19,7 +19,7 @@ services:
   api:
     build:
       context: ../..
-      dockerfile: Dockerfile
+      dockerfile: examples/fastapi-postgres-rls/Dockerfile
     container_name: multitenant_api_demo
     environment:
       DATABASE_URL: postgresql://postgres:postgrespassword@db:5432/multitenant_demo
@@ -28,4 +28,3 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    command: ["uvicorn", "examples.fastapi-postgres-rls.app:app", "--host", "0.0.0.0", "--port", "8000"]
