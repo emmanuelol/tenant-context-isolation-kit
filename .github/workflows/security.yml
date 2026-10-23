@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: "0 0 * * 1"  # Weekly scan
 
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
 jobs:
   bandit:
     name: Bandit Security AST Analysis
